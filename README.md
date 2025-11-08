@@ -34,37 +34,37 @@ The dataset is _not clean by default_ and requires preprocessing before applying
 
 # What We Did (So Far)
 
-# _Exploratory Data Analysis (EDA)_
+### **1. Exploratory Data Analysis (EDA)**  
+- Inspected dataset head and summary statistics  
+- Cleaned timestamp data and extracted usage hours  
+- Visualized feature distributions and correlations using Seaborn heatmaps  
 
-- Observed dataset head and statistical summaries
-- Cleaned timestamp data and extracted hour of app usage
-- Plotted histograms for numerical features
-- Studied correlation between independent variables and target
-- Visualized correlation heatmap with Seaborn
+### **2. Feature Engineering (Date/Time)**  
+- Converted string columns into `datetime` format  
+- Calculated time between `first_open` and `enrolled_date`  
+- Marked users taking more than 48 hours to enroll as unlikely converters  
 
-# _Feature Engineering (Date/Time)_
+### **3. Feature Engineering (App Screens)**  
+- Extracted top app screens and created binary features  
+- Grouped remaining screens into an `OtherScreens` feature  
 
-- Converted string columns into datetime format
-- Calculated time differences between `first_open` and `enrolled_date`
-- Assumed users taking more than 48 hours to enroll are unlikely customers
+### **4. Funnel Creation**  
+Grouped similar screens into behavioral funnels:  
+- `SavingCount` → Savings-related screens  
+- `CMCount` → Credit management screens  
+- `CCCount` → Credit card screens  
+- `LoansCount` → Loan-related screens  
 
-# _Feature Engineering (App Screens)_
+### **5. Exported Processed Data**  
+- Final cleaned and engineered dataset saved as **`new_appdata10.csv`** for modeling  
 
-- Extracted top screens from dataset and created binary variables
-- Counted leftover/other screens into a single feature
-
-# _Feature Engineering (Funnels)_
-
-Grouped screens into meaningful categories:
-
-- **SavingCount** → Savings-related screens
-- **CMCount** → Credit management screens
-- **CCCount** → Credit card screens
-- **LoansCount** → Loan-related screens
-
-# _Exported Processed Data_
-
-- Final engineered dataset saved as **`new_appdata10.csv`** for future model training
+### **6. Model Development (Logistic Regression)**  
+- Built and trained a **Logistic Regression classification model** to predict user enrollment  
+- Applied **feature scaling** and used both **L1/L2 regularization** techniques  
+- Evaluated model using **accuracy**, **precision**, **recall**, and **F1-score**  
+- Performed **10-fold Cross Validation** to validate performance consistency  
+- Conducted **Grid Search** for hyperparameter tuning (`C`, `penalty`)  
+- Generated final predictions and combined them with user IDs for analysis  
 
 # Tools and Libraries
 
@@ -81,3 +81,4 @@ Grouped screens into meaningful categories:
 ├── new_appdata10.csv # Final cleaned/engineered dataset
 ├── preprocessing.py # Python script for EDA + feature engineering
 ├── README.md # Project explanation (this file)
+
