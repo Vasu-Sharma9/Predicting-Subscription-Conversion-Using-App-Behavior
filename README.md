@@ -78,10 +78,10 @@ Grouped similar screens into behavioral funnels:
 Dataset/
 - appdata10.csv          # Original raw dataset
 - top_screens.csv        # List of top app screens
+- new_appdata10.csv          # Final cleaned and engineered dataset
+- main.py           # Script for EDA and feature engineering
+- model_logistic.py          # Logistic Regression model training and tuning script
+- README.md                  # Project documentation (this file)
 
-new_appdata10.csv          # Final cleaned and engineered dataset
-main.py           # Script for EDA and feature engineering
-model_logistic.py          # Logistic Regression model training and tuning script
-README.md                  # Project documentation (this file)
 
 
