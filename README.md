@@ -75,10 +75,13 @@ Grouped similar screens into behavioral funnels:
 
 # Repository Structure
 
-├── Dataset/
-│ ├── appdata10.csv # Original raw dataset
-│ ├── top_screens.csv # List of top app screens
-├── new_appdata10.csv # Final cleaned/engineered dataset
-├── preprocessing.py # Python script for EDA + feature engineering
-├── README.md # Project explanation (this file)
+Dataset/
+- appdata10.csv          # Original raw dataset
+- top_screens.csv        # List of top app screens
+
+new_appdata10.csv          # Final cleaned and engineered dataset
+main.py           # Script for EDA and feature engineering
+model_logistic.py          # Logistic Regression model training and tuning script
+README.md                  # Project documentation (this file)
+
 
